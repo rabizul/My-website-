@@ -4,23 +4,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RABIZUL HOQUE Learning Website</title>
+
+    <meta name="description"
+        content="RABIZUL HOQUE Learning Website - Learn HTML, CSS, JavaScript, Python and Cyber Security.">
+
+    <title>RABIZUL HOQUE | Learning Website</title>
 
     <style>
         :root {
             --primary: #0f172a;
-            --secondary: #1d4ed8;
+            --secondary: #2563eb;
             --accent: #38bdf8;
-            --bg: #edf6ff;
+            --bg: #f1f5f9;
             --card: #ffffff;
-            --text: #1f2937;
-            --muted: #4b5563;
+            --text: #1e293b;
+            --muted: #64748b;
             --success: #16a34a;
-            --shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+            --border: #e2e8f0;
+            --shadow: 0 10px 30px rgba(15, 23, 42, 0.10);
         }
 
         * {
             box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
         html {
@@ -28,9 +35,8 @@
         }
 
         body {
-            margin: 0;
             font-family: Arial, sans-serif;
-            background: linear-gradient(180deg, #edf6ff 0%, #dfeeff 100%);
+            background: var(--bg);
             color: var(--text);
             line-height: 1.6;
         }
@@ -39,279 +45,387 @@
             text-decoration: none;
         }
 
+        /* NAVBAR */
         nav {
-            background: rgba(15, 23, 42, 0.96);
             position: sticky;
             top: 0;
             z-index: 1000;
-            padding: 18px 30px;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            background: rgba(15, 23, 42, 0.97);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
         }
 
         .nav-container {
-            max-width: 1100px;
-            margin: 0 auto;
+            max-width: 1150px;
+            margin: auto;
+            padding: 16px 20px;
             display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 18px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
-        nav a {
-            color: #fff;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: color 0.2s ease;
+        .logo {
+            color: white;
+            font-size: 1.25rem;
+            font-weight: bold;
         }
 
-        nav a:hover {
+        .logo span {
             color: var(--accent);
         }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 0 20px;
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 18px;
         }
 
-        .home {
-            background: linear-gradient(135deg, #ffffff 0%, #eff7ff 100%);
-            padding: 90px 20px 60px;
-            border-bottom: 1px solid rgba(30, 64, 175, 0.08);
-        }
-
-        .hero {
-            max-width: 900px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        h1 {
-            color: var(--secondary);
-            font-size: clamp(2.2rem, 4vw, 3.5rem);
-            margin: 0 0 12px;
-            line-height: 1.15;
-        }
-
-        h2 {
-            color: #0f766e;
-            font-size: clamp(1.8rem, 3vw, 2.4rem);
-            margin: 0 0 20px;
-        }
-
-        h3 {
-            font-size: 1.5rem;
-            margin: 0 0 12px;
-        }
-
-        p {
-            font-size: 1.08rem;
-            color: var(--muted);
-        }
-
-        .tagline {
-            font-size: 1.35rem;
-            color: var(--primary);
+        .nav-links a {
+            color: white;
             font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 650px;
+            padding: 100px 20px 80px;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            background:
+                radial-gradient(circle at top right, #dbeafe, transparent 35%),
+                linear-gradient(135deg, #ffffff, #e0f2fe);
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dbeafe;
+            color: #1d4ed8;
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: bold;
             margin-bottom: 20px;
         }
 
-        .hero img {
-            width: 230px;
-            height: 230px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 5px solid #dfeeff;
-            box-shadow: var(--shadow);
-            margin-top: 25px;
+        .hero h1 {
+            font-size: clamp(2.3rem, 6vw, 4.5rem);
+            line-height: 1.1;
+            color: var(--primary);
+            margin-bottom: 20px;
         }
 
+        .hero h1 span {
+            color: var(--secondary);
+        }
+
+        .hero p {
+            max-width: 700px;
+            margin: 0 auto 25px;
+            color: var(--muted);
+            font-size: 1.15rem;
+        }
+
+        .hero-image {
+            width: 190px;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 25px auto;
+            display: block;
+            border: 6px solid white;
+            box-shadow: var(--shadow);
+        }
+
+        /* BUTTON */
         .btn {
             display: inline-block;
-            background: #0b0b0b;
-            color: #fff;
-            padding: 12px 24px;
             border: none;
-            border-radius: 999px;
+            border-radius: 50px;
+            padding: 13px 25px;
+            margin: 8px;
+            background: var(--primary);
+            color: white;
             font-size: 1rem;
+            font-weight: bold;
             cursor: pointer;
-            margin: 10px 8px;
-            transition: all 0.3s ease;
-            box-shadow: 0 8px 18px rgba(15, 23, 42, 0.12);
+            transition: 0.3s;
         }
 
         .btn:hover {
             background: var(--secondary);
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
 
+        .btn-primary {
+            background: var(--secondary);
+        }
+
+        /* COMMON */
         section {
-            padding: 80px 0;
+            padding: 80px 20px;
+        }
+
+        .container {
+            max-width: 1150px;
+            margin: auto;
         }
 
         .section-heading {
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+        }
+
+        /* ABOUT */
+        .about-card {
+            max-width: 850px;
+            margin: auto;
+            background: white;
+            padding: 35px;
+            border-radius: 22px;
+            box-shadow: var(--shadow);
+            text-align: center;
+        }
+
+        .about-card p {
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+
+        /* SKILLS */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            padding: 25px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .skill-card h3 {
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: var(--muted);
+        }
+
+        /* LESSONS */
+        .search-box {
+            max-width: 600px;
+            margin: 0 auto 35px;
+        }
+
+        .search-box input {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid var(--border);
+            border-radius: 50px;
+            font-size: 1rem;
+            outline: none;
+        }
+
+        .search-box input:focus {
+            border-color: var(--secondary);
         }
 
         .lesson-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+            gap: 25px;
         }
 
         .lesson-card {
-            background: var(--card);
-            padding: 28px 22px;
-            border-radius: 18px;
+            background: white;
+            padding: 28px;
+            border-radius: 20px;
             box-shadow: var(--shadow);
-            border: 1px solid rgba(15, 23, 42, 0.06);
-            transition: transform 0.25s ease, box-shadow 0.25s ease;
+            border: 1px solid var(--border);
+            transition: 0.3s;
         }
 
         .lesson-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 18px 34px rgba(15, 23, 42, 0.16);
+            transform: translateY(-7px);
         }
 
-        .lesson-card p {
-            margin-bottom: 18px;
+        .lesson-card h3 {
+            margin-bottom: 12px;
+        }
+
+        .lesson-card > p {
+            color: var(--muted);
         }
 
         .lesson-content {
             display: none;
-            margin-top: 16px;
-            padding-top: 14px;
-            border-top: 1px solid #e5e7eb;
+            margin-top: 18px;
+            padding-top: 18px;
+            border-top: 1px solid var(--border);
         }
 
-        .lesson-content h3 {
+        .lesson-content h4 {
             color: var(--secondary);
             margin-bottom: 8px;
         }
 
+        /* QUIZ */
         .quiz-card {
-            background: var(--card);
-            max-width: 860px;
-            margin: 24px auto;
-            padding: 28px 22px;
-            border-radius: 18px;
+            max-width: 850px;
+            margin: 22px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
             box-shadow: var(--shadow);
-            border: 1px solid rgba(15, 23, 42, 0.06);
         }
 
         .quiz-card p {
-            margin-top: 0;
+            margin: 10px 0 18px;
+            color: var(--muted);
         }
 
         .quiz-options {
             display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            justify-content: center;
-            margin-top: 20px;
         }
 
-        .quiz-options button {
-            flex: 1 1 180px;
-            max-width: 260px;
-            background: #0f172a;
-            color: white;
-            border-radius: 12px;
-        }
-
-        .quiz-options button:hover {
-            background: var(--secondary);
+        .quiz-options .btn {
+            flex: 1;
+            min-width: 200px;
         }
 
         .progress-wrap {
-            max-width: 520px;
-            margin: 22px auto 10px;
-            background: #dfe7f2;
-            height: 26px;
-            border-radius: 999px;
+            max-width: 700px;
+            height: 25px;
+            margin: 30px auto 15px;
+            background: #dbe4ef;
+            border-radius: 50px;
             overflow: hidden;
-            box-shadow: inset 0 2px 6px rgba(15, 23, 42, 0.08);
         }
 
         .progress-bar {
-            background: linear-gradient(90deg, var(--success), #4ade80);
             height: 100%;
             width: 0%;
-            transition: width 0.25s ease;
+            background: linear-gradient(90deg, var(--success), #4ade80);
+            transition: 0.4s;
         }
 
         .score {
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: var(--primary);
             text-align: center;
-            margin: 18px 0;
+            font-size: 1.4rem;
+            font-weight: bold;
         }
 
+        /* CONTACT */
         .contact-box {
             max-width: 700px;
-            margin: 0 auto;
-            background: #fff;
-            padding: 30px 24px;
+            margin: auto;
+            background: white;
+            padding: 35px;
             border-radius: 22px;
             box-shadow: var(--shadow);
-            border: 1px solid rgba(15, 23, 42, 0.06);
         }
 
         .contact-box input,
         .contact-box textarea {
             width: 100%;
-            max-width: 100%;
-            padding: 14px 16px;
-            border: 1px solid #d1d5db;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border);
             border-radius: 12px;
             font-size: 1rem;
-            margin: 10px 0;
-            background: #f9fbff;
+            outline: none;
+        }
+
+        .contact-box input:focus,
+        .contact-box textarea:focus {
+            border-color: var(--secondary);
         }
 
         .contact-box textarea {
-            min-height: 140px;
+            min-height: 150px;
             resize: vertical;
         }
 
+        /* FOOTER */
         footer {
-            background: #0f172a;
-            color: #e2e8f0;
+            background: var(--primary);
+            color: #cbd5e1;
             text-align: center;
-            padding: 26px 20px;
-            font-size: 0.95rem;
+            padding: 30px 20px;
         }
 
+        footer strong {
+            color: white;
+        }
+
+        /* MOBILE */
         @media (max-width: 700px) {
-            nav {
-                padding: 14px 18px;
-            }
-
             .nav-container {
-                gap: 10px 16px;
+                flex-direction: column;
             }
 
-            .home {
+            .nav-links {
+                gap: 10px 15px;
+            }
+
+            .hero {
                 padding-top: 70px;
+            }
+
+            .hero-image {
+                width: 150px;
+                height: 150px;
+            }
+
+            .about-card,
+            .contact-box,
+            .quiz-card {
+                padding: 24px 18px;
             }
 
             .quiz-options {
                 flex-direction: column;
             }
 
-            .quiz-options button {
+            .quiz-options .btn {
                 width: 100%;
-                max-width: none;
-            }
-
-            .lesson-card,
-            .quiz-card,
-            .contact-box {
-                padding-left: 18px;
-                padding-right: 18px;
             }
         }
     </style>
@@ -319,313 +433,861 @@
 
 <body>
 
+    <!-- NAVIGATION -->
     <nav>
         <div class="nav-container">
-            <a href="#home">Home</a>
-            <a href="#about">About</a>
-            <a href="#lessons">Lessons</a>
-            <a href="#quiz">Quiz</a>
-            <a href="#contact">Contact</a>
+
+            <div class="logo">
+                RABIZUL <span>HOQUE</span>
+            </div>
+
+            <div class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#lessons">Lessons</a>
+                <a href="#quiz">Quiz</a>
+                <a href="#contact">Contact</a>
+            </div>
+
         </div>
     </nav>
 
-    <div class="home" id="home">
-        <div class="container hero">
-            <h1>Welcome to RABIZUL HOQUE Learning</h1>
-            <div class="tagline">Learn • Practice • Build • Grow</div>
 
-            <p>Hello! My name is <strong>Rabizul Hoque</strong>.</p>
+    <!-- HOME -->
+    <header class="hero" id="home">
+
+        <div class="hero-content">
+
+            <div class="badge">🚀 My Learning Journey</div>
+
+            <h1>
+                Welcome to
+                <span>RABIZUL HOQUE</span>
+                Learning
+            </h1>
 
             <p>
-                I am learning Web Development step by step.
-                Join me and learn HTML, CSS, JavaScript and Python.
+                Learn • Practice • Build • Grow
             </p>
 
-            <img src="https://picsum.photos/300" alt="Learning illustration">
+            <p>
+                Hello! My name is <strong>Rabizul Hoque</strong>.
+                I am learning Web Development, Python and Cyber Security
+                step by step.
+            </p>
 
-            <br><br>
+            <img class="hero-image"
+                src="https://picsum.photos/400"
+                alt="Learning illustration">
 
-            <button class="btn" onclick="showMessage()">
+            <br>
+
+            <button class="btn btn-primary" onclick="startLearning()">
                 🚀 Start Learning
             </button>
-        </div>
-    </div>
 
+            <a href="#lessons" class="btn">
+                📚 View Lessons
+            </a>
+
+        </div>
+
+    </header>
+
+
+    <!-- ABOUT -->
     <section id="about">
+
         <div class="container">
+
             <div class="section-heading">
-                <h2>About Me</h2>
+                <h2>👨‍💻 About Me</h2>
+                <p>My learning journey</p>
             </div>
 
-            <p style="max-width: 800px; margin: 0 auto; text-align: center;">
-                I am learning Web Development and building this website step by step.
-                My goal is to improve my skills every day and share what I learn with others.
-            </p>
+            <div class="about-card">
+
+                <p>
+                    I am learning Web Development and Cyber Security
+                    step by step. My goal is to improve my technical
+                    skills every day and build useful projects.
+                </p>
+
+                <br>
+
+                <p>
+                    I believe in learning, practicing and building
+                    real projects.
+                </p>
+
+            </div>
+
         </div>
+
     </section>
 
-    <section id="lessons">
+
+    <!-- SKILLS -->
+    <section id="skills">
+
         <div class="container">
+
+            <div class="section-heading">
+                <h2>💻 Learning Skills</h2>
+                <p>Technologies I am learning</p>
+            </div>
+
+            <div class="skills-grid">
+
+                <div class="skill-card">
+                    <div class="skill-icon">🌐</div>
+                    <h3>HTML</h3>
+                    <p>Website Structure</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🎨</div>
+                    <h3>CSS</h3>
+                    <p>Website Design</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">⚡</div>
+                    <h3>JavaScript</h3>
+                    <p>Interactive Websites</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🐍</div>
+                    <h3>Python</h3>
+                    <p>Programming</p>
+                </div>
+
+                <div class="skill-card">
+                    <div class="skill-icon">🔐</div>
+                    <h3>Cyber Security</h3>
+                    <p>Online Security</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- LESSONS -->
+    <section id="lessons">
+
+        <div class="container">
+
             <div class="section-heading">
                 <h2>📚 Web Development Lessons</h2>
+                <p>Start learning from the basics</p>
             </div>
 
-            <p style="text-align:center; margin-bottom: 10px;">
-                Start learning Web Development from the basics.
-            </p>
+            <div class="search-box">
+                <input
+                    type="text"
+                    id="lessonSearch"
+                    placeholder="🔍 Search lessons..."
+                    onkeyup="searchLessons()">
+            </div>
 
-            <div class="lesson-grid">
+            <div class="lesson-grid" id="lessonGrid">
+
+
+                <!-- HTML -->
                 <div class="lesson-card">
+
                     <h3>📘 Lesson 1 — HTML</h3>
-                    <p>Learn how to create the structure of a website.</p>
-                    <button class="btn" onclick="toggleLesson('htmlLessonContent')">
+
+                    <p>
+                        Learn how to create the structure of a website.
+                    </p>
+
+                    <button class="btn"
+                        onclick="toggleLesson('htmlLesson')">
                         Start Lesson
                     </button>
 
-                    <div id="htmlLessonContent" class="lesson-content">
-                        <h3>HTML Basics</h3>
-                        <p>HTML का मतलब HyperText Markup Language है।</p>
-                        <p>HTML से website की structure बनाई जाती है।</p>
+                    <div id="htmlLesson" class="lesson-content">
+
+                        <h4>HTML Basics</h4>
+
+                        <p>
+                            HTML means HyperText Markup Language.
+                        </p>
+
+                        <p>
+                            HTML is used to create the structure
+                            of a website.
+                        </p>
+
+                        <p>
+                            Example: headings, paragraphs, images
+                            and links.
+                        </p>
+
                     </div>
+
                 </div>
 
+
+                <!-- CSS -->
                 <div class="lesson-card">
+
                     <h3>🎨 Lesson 2 — CSS</h3>
-                    <p>Learn how to design and style a website.</p>
-                    <button class="btn" onclick="toggleLesson('cssLessonContent')">
+
+                    <p>
+                        Learn how to design and style websites.
+                    </p>
+
+                    <button class="btn"
+                        onclick="toggleLesson('cssLesson')">
                         Start Lesson
                     </button>
 
-                    <div id="cssLessonContent" class="lesson-content">
-                        <h3>CSS Basics</h3>
-                        <p>CSS का मतलब Cascading Style Sheets है।</p>
-                        <p>CSS से website का color, size और design बदला जाता है।</p>
+                    <div id="cssLesson" class="lesson-content">
+
+                        <h4>CSS Basics</h4>
+
+                        <p>
+                            CSS means Cascading Style Sheets.
+                        </p>
+
+                        <p>
+                            CSS controls colors, fonts,
+                            spacing and layouts.
+                        </p>
+
                     </div>
+
                 </div>
 
+
+                <!-- JAVASCRIPT -->
                 <div class="lesson-card">
+
                     <h3>⚡ Lesson 3 — JavaScript</h3>
-                    <p>Learn how to make a website interactive.</p>
-                    <button class="btn" onclick="toggleLesson('jsLessonContent')">
+
+                    <p>
+                        Learn how to make websites interactive.
+                    </p>
+
+                    <button class="btn"
+                        onclick="toggleLesson('jsLesson')">
                         Start Lesson
                     </button>
 
-                    <div id="jsLessonContent" class="lesson-content">
-                        <h3>JavaScript Basics</h3>
-                        <p>JavaScript website को interactive बनाती है।</p>
-                        <p>JavaScript से buttons और interactive features बनाए जा सकते हैं।</p>
+                    <div id="jsLesson" class="lesson-content">
+
+                        <h4>JavaScript Basics</h4>
+
+                        <p>
+                            JavaScript is a programming language
+                            used to make websites interactive.
+                        </p>
+
+                        <p>
+                            Buttons, forms, menus and many
+                            interactive features can use JavaScript.
+                        </p>
+
                     </div>
+
                 </div>
 
+
+                <!-- PYTHON -->
                 <div class="lesson-card">
+
                     <h3>🐍 Lesson 4 — Python</h3>
-                    <p>Learn the basics of Python programming.</p>
-                    <button class="btn" onclick="toggleLesson('pythonLessonContent')">
+
+                    <p>
+                        Learn the basics of Python programming.
+                    </p>
+
+                    <button class="btn"
+                        onclick="toggleLesson('pythonLesson')">
                         Start Lesson
                     </button>
 
-                    <div id="pythonLessonContent" class="lesson-content">
-                        <h3>Python Basics</h3>
-                        <p>Python एक आसान और powerful programming language है।</p>
-                        <p>Python का उपयोग Websites, Automation, AI और Data Science में किया जाता है।</p>
+                    <div id="pythonLesson" class="lesson-content">
+
+                        <h4>Python Basics</h4>
+
+                        <p>
+                            Python is a popular programming language.
+                        </p>
+
+                        <p>
+                            Python can be used for automation,
+                            web development, AI and data science.
+                        </p>
+
                     </div>
+
                 </div>
 
+
+                <!-- CYBER SECURITY -->
                 <div class="lesson-card">
+
                     <h3>🔐 Lesson 5 — Cyber Security</h3>
-                    <p>Learn the basics of Cyber Security and stay safe online.</p>
-                    <button class="btn" onclick="toggleLesson('cyberLessonContent')">
+
+                    <p>
+                        Learn the basics of Cyber Security.
+                    </p>
+
+                    <button class="btn"
+                        onclick="toggleLesson('cyberLesson')">
                         Start Lesson
                     </button>
 
-                    <div id="cyberLessonContent" class="lesson-content">
-                        <h3>🛡️ Cyber Security Basics</h3>
-                        <p>Cyber Security का मतलब computers, phones, websites और data को सुरक्षित रखना है।</p>
-                        <p>🔑 Strong Password — हमेशा मजबूत और unique password रखें।</p>
-                        <p>🎣 Phishing — किसी fake message या website से सावधान रहें।</p>
-                        <p>🛡️ Online Safety — अपना password और OTP किसी के साथ share न करें।</p>
-                        <p>💻 Ethical Hacking — permission के साथ security weaknesses को समझना और ठीक करना।</p>
+                    <div id="cyberLesson" class="lesson-content">
+
+                        <h4>🛡️ Cyber Security Basics</h4>
+
+                        <p>
+                            Cyber Security means protecting
+                            computers, networks, websites and data.
+                        </p>
+
+                        <p>
+                            🔑 Use strong and unique passwords.
+                        </p>
+
+                        <p>
+                            🎣 Be careful with phishing messages
+                            and fake websites.
+                        </p>
+
+                        <p>
+                            🛡️ Never share passwords or OTPs.
+                        </p>
+
+                        <p>
+                            💻 Ethical hacking means testing
+                            security with proper permission.
+                        </p>
+
                     </div>
+
                 </div>
+
+
             </div>
+
         </div>
+
     </section>
 
+
+    <!-- QUIZ -->
     <section id="quiz">
+
         <div class="container">
+
             <div class="section-heading">
                 <h2>🧠 Web Development Quiz</h2>
+                <p>Test your knowledge</p>
             </div>
 
-            <p style="text-align:center;">Test your knowledge!</p>
 
             <div class="quiz-card">
+
                 <h3>Question 1</h3>
-                <p>HTML का उपयोग किसके लिए किया जाता है?</p>
+
+                <p>
+                    HTML का उपयोग किसके लिए किया जाता है?
+                </p>
 
                 <div class="quiz-options">
-                    <button class="btn" onclick="checkAnswer(1, 'correct')">Website का structure बनाना</button>
-                    <button class="btn" onclick="checkAnswer(1, 'wrong')">Photo editing</button>
-                    <button class="btn" onclick="checkAnswer(1, 'wrong')">Video editing</button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(1, 'correct')">
+                        Website का structure बनाना
+                    </button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(1, 'wrong')">
+                        Photo editing
+                    </button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(1, 'wrong')">
+                        Video editing
+                    </button>
+
                 </div>
+
             </div>
 
+
             <div class="quiz-card">
+
                 <h3>Question 2</h3>
-                <p>CSS का उपयोग किसके लिए किया जाता है?</p>
+
+                <p>
+                    CSS का उपयोग किसके लिए किया जाता है?
+                </p>
 
                 <div class="quiz-options">
-                    <button class="btn" onclick="checkAnswer(2, 'correct')">Website को design करना</button>
-                    <button class="btn" onclick="checkAnswer(2, 'wrong')">Database बनाना</button>
-                    <button class="btn" onclick="checkAnswer(2, 'wrong')">Password बनाना</button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(2, 'correct')">
+                        Website को design करना
+                    </button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(2, 'wrong')">
+                        Database बनाना
+                    </button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(2, 'wrong')">
+                        Password बनाना
+                    </button>
+
                 </div>
+
             </div>
 
+
             <div class="quiz-card">
+
                 <h3>Question 3</h3>
-                <p>Python क्या है?</p>
+
+                <p>
+                    Python क्या है?
+                </p>
 
                 <div class="quiz-options">
-                    <button class="btn" onclick="checkAnswer(3, 'wrong')">Operating System</button>
-                    <button class="btn" onclick="checkAnswer(3, 'correct')">Programming Language</button>
-                    <button class="btn" onclick="checkAnswer(3, 'wrong')">Browser</button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(3, 'wrong')">
+                        Operating System
+                    </button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(3, 'correct')">
+                        Programming Language
+                    </button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(3, 'wrong')">
+                        Browser
+                    </button>
+
                 </div>
+
             </div>
 
+
             <div class="quiz-card">
+
                 <h3>Question 4</h3>
-                <p>JavaScript का उपयोग किसके लिए किया जाता है?</p>
+
+                <p>
+                    JavaScript का उपयोग किसके लिए किया जाता है?
+                </p>
 
                 <div class="quiz-options">
-                    <button class="btn" onclick="checkAnswer(4, 'correct')">Website को interactive बनाने के लिए</button>
-                    <button class="btn" onclick="checkAnswer(4, 'wrong')">Computer बंद करने के लिए</button>
-                    <button class="btn" onclick="checkAnswer(4, 'wrong')">Photo print करने के लिए</button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(4, 'correct')">
+                        Website को interactive बनाने के लिए
+                    </button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(4, 'wrong')">
+                        Computer बंद करने के लिए
+                    </button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(4, 'wrong')">
+                        Photo print करने के लिए
+                    </button>
+
                 </div>
+
             </div>
+
 
             <div class="quiz-card">
+
                 <h3>Question 5</h3>
-                <p>Cyber Security का मुख्य उद्देश्य क्या है?</p>
+
+                <p>
+                    Cyber Security का मुख्य उद्देश्य क्या है?
+                </p>
 
                 <div class="quiz-options">
-                    <button class="btn" onclick="checkAnswer(5, 'correct')">Data और systems को सुरक्षित रखना</button>
-                    <button class="btn" onclick="checkAnswer(5, 'wrong')">Games खेलना</button>
-                    <button class="btn" onclick="checkAnswer(5, 'wrong')">Videos बनाना</button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(5, 'correct')">
+                        Data और systems को सुरक्षित रखना
+                    </button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(5, 'wrong')">
+                        Games खेलना
+                    </button>
+
+                    <button class="btn"
+                        onclick="checkAnswer(5, 'wrong')">
+                        Videos बनाना
+                    </button>
+
                 </div>
+
             </div>
+
 
             <div class="progress-wrap">
                 <div id="progressBar" class="progress-bar"></div>
             </div>
 
-            <div id="score" class="score">Score: 0 / 5</div>
+            <div id="score" class="score">
+                Score: 0 / 5
+            </div>
 
             <div style="text-align:center;">
-                <button class="btn" onclick="restartQuiz()">🔄 Restart Quiz</button>
+
+                <button class="btn"
+                    onclick="restartQuiz()">
+                    🔄 Restart Quiz
+                </button>
+
             </div>
+
         </div>
+
     </section>
 
+
+    <!-- CONTACT -->
     <section id="contact">
+
         <div class="container">
+
             <div class="section-heading">
-                <h2>Contact Me</h2>
+                <h2>📩 Contact Me</h2>
+                <p>Send me a message</p>
             </div>
 
             <div class="contact-box">
-                <input type="text" placeholder="Your Name">
-                <input type="email" placeholder="Your Email">
-                <textarea placeholder="Your Message"></textarea>
+
+                <input
+                    type="text"
+                    id="name"
+                    placeholder="Your Name">
+
+                <input
+                    type="email"
+                    id="email"
+                    placeholder="Your Email">
+
+                <textarea
+                    id="message"
+                    placeholder="Your Message"></textarea>
+
                 <div style="text-align:center;">
-                    <button class="btn" onclick="sendMessage()">Send Message</button>
+
+                    <button class="btn btn-primary"
+                        onclick="sendMessage()">
+                        📩 Send Message
+                    </button>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
+
+    <!-- FOOTER -->
     <footer>
-        © 2026 Rabizul Hoque Learning Website
+
+        <p>
+            © 2026 <strong>RABIZUL HOQUE</strong> Learning Website
+        </p>
+
+        <p>
+            Learn • Practice • Build • Grow 🚀
+        </p>
+
     </footer>
 
+
+    <!-- JAVASCRIPT -->
     <script>
-        function showMessage() {
-            alert("Welcome! Let's start learning.");
+
+        /* START LEARNING */
+
+        function startLearning() {
+
+            alert(
+                "🚀 Welcome to RABIZUL HOQUE Learning Website!"
+            );
+
+            document
+                .getElementById("lessons")
+                .scrollIntoView({
+                    behavior: "smooth"
+                });
         }
+
+
+        /* LESSON TOGGLE */
 
         function toggleLesson(id) {
-            const lesson = document.getElementById(id);
-            lesson.style.display =
-                lesson.style.display === "block" ? "none" : "block";
+
+            const lesson =
+                document.getElementById(id);
+
+            if (lesson.style.display === "block") {
+
+                lesson.style.display = "none";
+
+            } else {
+
+                lesson.style.display = "block";
+
+            }
         }
+
+
+        /* LESSON SEARCH */
+
+        function searchLessons() {
+
+            const search =
+                document
+                    .getElementById("lessonSearch")
+                    .value
+                    .toLowerCase();
+
+            const cards =
+                document.querySelectorAll(".lesson-card");
+
+            cards.forEach(function (card) {
+
+                const text =
+                    card.innerText.toLowerCase();
+
+                if (text.includes(search)) {
+
+                    card.style.display = "block";
+
+                } else {
+
+                    card.style.display = "none";
+
+                }
+
+            });
+        }
+
+
+        /* CONTACT */
 
         function sendMessage() {
-            const name = document.querySelectorAll("input")[0].value.trim();
-            const email = document.querySelectorAll("input")[1].value.trim();
-            const message = document.querySelector("textarea").value.trim();
+
+            const name =
+                document
+                    .getElementById("name")
+                    .value
+                    .trim();
+
+            const email =
+                document
+                    .getElementById("email")
+                    .value
+                    .trim();
+
+            const message =
+                document
+                    .getElementById("message")
+                    .value
+                    .trim();
+
 
             if (!name || !email || !message) {
-                alert("Please fill all fields before sending.");
+
+                alert(
+                    "⚠️ Please fill all fields before sending."
+                );
+
                 return;
             }
 
-            alert("Thank you! Your message has been received.");
 
-            document.querySelectorAll("input")[0].value = "";
-            document.querySelectorAll("input")[1].value = "";
-            document.querySelector("textarea").value = "";
+            alert(
+                "✅ Thank you, " +
+                name +
+                "! Your message has been received."
+            );
+
+
+            document
+                .getElementById("name")
+                .value = "";
+
+            document
+                .getElementById("email")
+                .value = "";
+
+            document
+                .getElementById("message")
+                .value = "";
         }
 
-        let score = Number(localStorage.getItem("quizScore")) || 0;
-        let answered = JSON.parse(localStorage.getItem("answeredQuestions")) || [];
+
+        /* QUIZ */
+
+        let score =
+            Number(
+                localStorage.getItem("quizScore")
+            ) || 0;
+
+
+        let answered =
+            JSON.parse(
+                localStorage.getItem(
+                    "answeredQuestions"
+                )
+            ) || [];
+
 
         function saveProgress() {
-            localStorage.setItem("quizScore", score);
-            localStorage.setItem("answeredQuestions", JSON.stringify(answered));
+
+            localStorage.setItem(
+                "quizScore",
+                score
+            );
+
+            localStorage.setItem(
+                "answeredQuestions",
+                JSON.stringify(answered)
+            );
         }
+
 
         function updateScoreUI() {
-            document.getElementById("score").innerText = "Score: " + score + " / 5";
-            const progress = (answered.length / 5) * 100;
-            document.getElementById("progressBar").style.width = progress + "%";
+
+            document
+                .getElementById("score")
+                .innerText =
+                "Score: " +
+                score +
+                " / 5";
+
+
+            const progress =
+                (answered.length / 5) * 100;
+
+
+            document
+                .getElementById("progressBar")
+                .style.width =
+                progress + "%";
         }
 
-        function checkAnswer(question, answer) {
+
+        function checkAnswer(
+            question,
+            answer
+        ) {
+
             if (answered.includes(question)) {
+
+                alert(
+                    "⚠️ You already answered this question."
+                );
+
                 return;
             }
+
 
             answered.push(question);
 
+
             if (answer === "correct") {
+
                 score++;
-                alert("✅ Correct Answer!");
+
+                alert(
+                    "✅ Correct Answer!"
+                );
+
             } else {
-                alert("❌ Wrong Answer!");
+
+                alert(
+                    "❌ Wrong Answer!"
+                );
             }
 
+
             saveProgress();
+
             updateScoreUI();
 
+
             if (answered.length === 5) {
+
                 if (score === 5) {
-                    alert("🏆 Excellent! You got 5 / 5!");
+
+                    alert(
+                        "🏆 Excellent! You got 5 / 5!"
+                    );
+
                 } else if (score >= 3) {
-                    alert("🎉 Good Job! You got " + score + " / 5!");
+
+                    alert(
+                        "🎉 Good Job! You got " +
+                        score +
+                        " / 5!"
+                    );
+
                 } else {
-                    alert("📚 Keep Learning! Your score is " + score + " / 5.");
+
+                    alert(
+                        "📚 Keep Learning! Your score is " +
+                        score +
+                        " / 5."
+                    );
                 }
             }
         }
 
+
+        /* RESTART QUIZ */
+
         function restartQuiz() {
+
             score = 0;
+
             answered = [];
+
             saveProgress();
+
             updateScoreUI();
-            alert("🔄 Quiz restarted!");
+
+            alert(
+                "🔄 Quiz restarted!"
+            );
         }
 
+
+        /* INITIAL SCORE */
+
         updateScoreUI();
+
     </script>
 
 </body>
